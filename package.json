@@ -1,0 +1,80 @@
+{
+  "name": "redux-action-generators",
+  "version": "1.0.0",
+  "description": "Simple like redux-thunk but better",
+  "main": "lib/index.js",
+  "unpkg": "dist/index.js",
+  "module": "es/index.js",
+  "directories": {
+    "example": "./examples"
+  },
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "test": "jest",
+    "lint": "eslint ./src --fix",
+    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuch/redux-action-generators.git"
+  },
+  "author": "Alex Afonin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tuch/redux-action-generators/issues"
+  },
+  "homepage": "https://github.com/Tuch/redux-action-generators#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.14.2",
+    "rimraf": "^2.6.2",
+    "uninstall": "0.0.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "is-generator": "^1.0.3"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "notify": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/es/",
+      "/examples/",
+      "/lib/"
+    ]
+  }
+}

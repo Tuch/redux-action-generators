@@ -1,0 +1,35 @@
+.error-block {
+  left: 0;
+  position: absolute;
+  top: -130px;
+  right: 0px;
+  width: 200px;
+  margin: auto;
+  background: #fff;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  z-index: 10;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 3px 3px;
+}
+
+.error-block__reload {
+  display: inline-block;
+  position: relative;
+  right: -67px;
+  top: 1px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.error-block__reload:hover {
+  transform: rotate(50deg);
+  color: #ff2828;
+}
+
+.error-block__text {
+  display: inline-block;
+}
