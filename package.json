@@ -1,6 +1,6 @@
 {
   "name": "redux-action-generators",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple like redux-thunk but better",
   "main": "lib/index.js",
   "unpkg": "dist/index.js",
@@ -15,7 +15,9 @@
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
-    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack"
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack",
+    "publish:prepare": "rimraf -rf webpack.config.babel.js examples/ .gitignore .idea",
+    "publish:go": "npm i && npm run clean && npm run build && npm run publish:prepare && npm publish"
   },
   "lint-staged": {
     "*.{js}": [
