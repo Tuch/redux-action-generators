@@ -9,25 +9,23 @@ const plugins = [
   }),
 ];
 
-const mode =  NODE_ENV || 'development'
-const filename = `redux-actions-generator${mode === 'production' ? '.min' : ''}.js`;
+const mode = NODE_ENV || 'development';
+const filename = `redux-action-generators${
+  mode === 'production' ? '.min' : ''
+}.js`;
 
 export default {
   mode,
   module: {
-    rules: [
-      { test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ },
-    ],
+    rules: [{ test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ }],
   },
 
-  entry: [
-    './src/index',
-  ],
+  entry: ['./src/index'],
 
   output: {
     path: path.join(__dirname, 'dist'),
     filename,
-    library: 'ReduxActionsGenerator',
+    library: 'ReduxActionGenerators',
     libraryTarget: 'umd',
   },
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { createGeneratorMiddleware } from 'redux-actions-generator'; // eslint-disable-line
+import { createGeneratorMiddleware } from 'redux-action-generators';
 import App from './components/App';
 import rootReducer from './ducks';
 import { loadTodos } from './actions';
