@@ -1,6 +1,6 @@
 {
   "name": "redux-action-generators",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple like redux-thunk but better",
   "main": "lib/index.js",
   "unpkg": "dist/index.js",
