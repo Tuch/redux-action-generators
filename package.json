@@ -1,6 +1,6 @@
 {
   "name": "redux-action-generators",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Simple like redux-thunk but better",
   "main": "lib/index.js",
   "unpkg": "dist/index.js",
@@ -16,7 +16,7 @@
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack",
-    "publish:prepare": "rimraf -rf webpack.config.babel.js examples/ .gitignore .idea",
+    "publish:prepare": "rimraf -rf webpack.config.js examples/ .gitignore .idea",
     "publish:go": "npm i && npm run clean && npm run build && npm run publish:prepare && npm publish"
   },
   "lint-staged": {
@@ -36,18 +36,21 @@
   },
   "homepage": "https://github.com/Tuch/redux-action-generators#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.6",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-register": "^6.26.0",
+    "babel-loader": "^8.0.2",
     "cross-env": "^5.2.0",
-    "eslint": "^5.3.0",
+    "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^21.21.0",
@@ -64,6 +67,7 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "is-generator": "^1.0.3"
   },
   "jest": {

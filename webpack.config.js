@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
 const { NODE_ENV } = process.env;
 
@@ -14,7 +14,7 @@ const filename = `redux-action-generators${
   mode === 'production' ? '.min' : ''
 }.js`;
 
-export default {
+module.exports = {
   mode,
   module: {
     rules: [{ test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ }],
