@@ -1,6 +1,5 @@
 # redux-action-generators
-You can use it instead redux-thunk to make your code cleaner
-
+Syntax sugar that you could use instead of redux-thunk to make your app cleaner
 
 ### Simple example.
 
